@@ -34,7 +34,8 @@ class TwitterLogger
             tweet.created_at = Time.parse(status['created_at'])
             tweet.save
           end
-        rescue
+        rescue => e
+          puts e.backtrace
           puts 'ERROR: retry...'
         end
         sleep 5
