@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'foreman'
+gem 'i18n'
+gem 'userstream'
+gem 'activerecord'
+gem 'mysql2'
