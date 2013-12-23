@@ -1,6 +1,6 @@
 class CreateTweets < ActiveRecord::Migration
   def self.up
-    create_table :tweets, :id => false do |t|
+    create_table :tweets, :id => false, :options => "ENGINE=MyISAM" do |t|
       t.column :id, 'bigint(19) PRIMARY KEY'
       t.integer :user_id
       t.string :name
@@ -10,5 +10,9 @@ class CreateTweets < ActiveRecord::Migration
       t.string :in_reply_to_screen_name
       t.datetime :created_at
     end
+  end
+
+  def self.down
+    drop_table :tweets
   end
 end
