@@ -1,0 +1,19 @@
+db:
+    production:
+        adapter:  mysql2
+        host:     localhost
+        username: root
+        password: hoge
+        database: tweets
+
+    development:
+        adapter:  mysql2
+        host:     localhost
+        username: root
+        password: hoge
+        database: tweets
+twitter:
+    consumer_key: 'xxxxxxxxxxxxxxx'
+    consumer_secret: 'xxxxxxxxxxxxxxx'
+    access_token: 'xxxxxxxxxxxxxxx'
+    access_token_secret: 'xxxxxxxxxxxxxxx'
