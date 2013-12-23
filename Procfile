@@ -1,1 +1,1 @@
-clock: bundle exec ruby app/main.rb
+logger: bundle exec ruby app/main.rb
