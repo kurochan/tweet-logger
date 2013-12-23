@@ -12,6 +12,7 @@ Dir[File.expand_path('../model', __FILE__) << '/*.rb'].each do |file|
   require file
 end
 
+puts "Start Logger: ENV = #{ENV['ENV'] ? ENV['ENV'] : 'development'}"
 twitter_logger = TwitterLogger.new
 thread = twitter_logger.start
 thread.join
