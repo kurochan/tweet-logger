@@ -2,7 +2,7 @@ class CreateTweets < ActiveRecord::Migration
   def self.up
     create_table :tweets, :id => false, :options => "ENGINE=MyISAM" do |t|
       t.column :id, 'bigint(19) PRIMARY KEY'
-      t.integer :user_id
+      t.integer :user_id, :limit => 8
       t.string :name
       t.string :screen_name
       t.string :text
