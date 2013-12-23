@@ -35,6 +35,8 @@ class TwitterLogger
             tweet.save
           end
         rescue => e
+          puts e.class
+          puts e.message
           puts e.backtrace
           puts 'ERROR: retry...'
         end
