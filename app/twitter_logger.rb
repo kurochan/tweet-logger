@@ -10,7 +10,7 @@ class TwitterLogger
         begin
           client = get_twitter_instance
           client.sample do |status|
-            next unless status.is_a?(Twitter::Tweet) && status.user.lang == 'ja'
+            next unless status.is_a?(Twitter::Tweet) && status.lang == 'ja'
       	    save_status status
           end
         rescue => e

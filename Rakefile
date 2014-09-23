@@ -9,7 +9,7 @@ task :migrate => :environment do
     module ConnectionAdapters
       class AbstractMysqlAdapter
         def create_table(table_name, options = {}) #:nodoc:
-          super(table_name, options.reverse_merge(:options => "ENGINE=InnoDB ROW_FORMAT=DYNAMIC"))
+          super(table_name, options.reverse_merge(:options => "ENGINE=InnoDB ROW_FORMAT=COMPRESSED"))
         end
       end
     end
