@@ -5,6 +5,15 @@ task :default => :migrate
 
 desc 'Migrate database'
 task :migrate => :environment do
+  module ActiveRecord
+    module ConnectionAdapters
+      class AbstractMysqlAdapter
+        def create_table(table_name, options = {}) #:nodoc:
+          super(table_name, options.reverse_merge(:options => "ENGINE=InnoDB ROW_FORMAT=DYNAMIC"))
+        end
+      end
+    end
+  end
   ActiveRecord::Migrator.migrate('db/migrate', ENV['VERSION'] ? ENV['VERSION'].to_i : nil )
 end
 
